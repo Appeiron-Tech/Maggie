@@ -1,0 +1,67 @@
+<div class="mainBox">
+  <div class="horizontal-scrolling-items">
+    <div class="horizontal-scrolling-items__item">
+      <a class="textSecondary">ART</a>
+      <a class="textPrimary">CHANGE</a>
+      <a class="textSecondary">THE</a>
+      <a class="textPrimary">WORLD</a>
+      <a class="textSecondary">ART</a>
+      <a class="textPrimary">CHANGE</a>
+      <a class="textSecondary">THE</a>
+      <a class="textPrimary">WORLD</a>
+      <a class="textSecondary">ART</a>
+      <a class="textPrimary">CHANGE</a>
+      <a class="textSecondary">THE</a>
+      <a class="textPrimary">WORLD</a>
+      <a class="textSecondary">ART</a>
+      <a class="textPrimary">CHANGE</a>
+      <a class="textSecondary">THE</a>
+      <a class="textPrimary">WORLD</a>
+      <a class="textSecondary">ART</a>
+      <a class="textPrimary">CHANGE</a>
+      <a class="textSecondary">THE</a>
+      <a class="textPrimary">WORLD</a>
+    </div>
+  </div>
+</div>
+
+<style>
+@keyframes infiniteScroll {
+  from {transform: translateX(0)}
+  to {transform: translateX(-50%)}
+}
+.mainBox {
+  width: 100%;
+  overflow-x: hidden;
+}
+.horizontal-scrolling-items {
+  display: flex;
+  font-size: 40px;
+  width: 2600px;
+  animation-name: infiniteScroll;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.horizontal-scrolling-items__item {
+  white-space: nowrap;
+}
+
+.textPrimary {
+  color: #B9F240;
+  font-size: 40px;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 80px;
+  margin: 0px 4px 0px 4px;
+}
+
+.textSecondary {
+  color: #698DC2;
+  font-size: 40px;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 80px;
+  margin: 0px 4px 0px 4px;
+}
+</style>
