@@ -1,0 +1,45 @@
+---
+//https://tailwindcomponents.com/component/sticky-header-desktop
+interface Props {
+  navButtons: any[];
+}
+
+const { navButtons } = Astro.props;
+
+---
+<!-- component -->
+<header class="header sticky top-0 blur-background z-[999] shadow-md flex items-center justify-between px-8 py-8">
+  <!-- logo -->
+  <h1 class="w-3/12">
+      <a href="">
+        <!-- <svg viewBox="0 0 248 31" class="h-6 w-auto hover:text-green-500 duration-200"></svg> -->
+      </a>
+  </h1>
+
+  <!-- navigation -->
+  <nav class="nav font-semibold text-lg">
+      <ul class="flex items-center">
+        {navButtons.map(button => (
+          <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer active">
+            <a href={`${button.url}`}>{button.title}</a>
+          </li>
+        ))}
+      </ul>
+  </nav>
+
+  <!-- buttons --->
+  <div class="w-3/12 flex justify-end">
+      <a href="">
+        <img src = "/icons/Group50.svg" alt="My Happy SVG" width="45" height="35"/>
+      </a>
+  </div>
+</header>
+
+<style>
+  .blur-background {
+/* From https://css.glass */
+    background: rgba(255, 255, 255, 0.32);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+  }
+</style>

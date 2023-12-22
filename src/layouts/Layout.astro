@@ -5,7 +5,24 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const navButtons: any[] = []
+const navButtons: any[] = [
+	{
+		title: 'Artwork',
+		url: 'https://artwork.com'
+	},
+	{
+		title: 'Sketch',
+		url: 'https://Sketch.com'
+	},
+	{
+		title: 'About',
+		url: 'https://About.com'
+	},
+	{
+		title: 'Shop',
+		url: 'https://Shop.com'
+	}
+]
 ---
 
 <!doctype html>
@@ -13,6 +30,7 @@ const navButtons: any[] = []
 	<head>
 		<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 		<link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Cormorant+Upright' rel='stylesheet'>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
@@ -46,6 +64,7 @@ const navButtons: any[] = []
 		font-family:
 			Poppins,
 			EB Garamond,
+			Cormorant Upright,
 			Menlo,
 			Monaco,
 			Lucida Console,
