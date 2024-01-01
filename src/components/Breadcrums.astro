@@ -1,0 +1,22 @@
+---
+interface Props {
+	breadcrums: string[];
+}
+
+const { breadcrums } = Astro.props;
+const breadcrum = breadcrums.join(' > ')
+---
+
+<div class="breadcrums">
+  {breadcrum}
+</div>
+
+<style>
+.breadcrums {
+  width: 100%;
+  left: 2rem;
+  background: white;
+  color: #878988;
+  font-family: Cormorant Upright;
+}
+</style>

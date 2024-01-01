@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrums from '../components/Breadcrums.astro';
+import SocialNetworkLinks from '../components/SocialNetworkLinks.astro';
+
+const aboutTitle = "Hello, I’m Maggie"
+const breadcrums = ['Home', 'about']
+const mainText = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+---
+
+<Layout title="Margarita Velarde - Design">
+	<main>
+    <Breadcrums breadcrums={breadcrums}/>
+    <div class="flex flex-row gap-10 my-20">
+      <div class="basis-1/2 mx-20">
+        <div class="flex flex-col gap-4">
+          <SocialNetworkLinks  alignment='justify-start' />
+            <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1699963908568-AXN5GNYGZW1X67RVF0CU/image-asset.jpeg?format=1000w"/>
+        </div>
+        <div class="worksLink pt-10">See my garden</div>
+      </div>
+      <div class="basis-1/2 mx-14">
+        <div class="flex flex-col gap-4">
+		      <h2 class="aboutTitle pb-10">{aboutTitle}</h2>
+          <div class="mainText flex justify-center">
+            <center>{mainText} {mainText}</center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row my-28">
+      <div>
+        <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1699963908568-AXN5GNYGZW1X67RVF0CU/image-asset.jpeg?format=1000w"/>
+      </div>
+      <div>
+        <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1699963908568-AXN5GNYGZW1X67RVF0CU/image-asset.jpeg?format=1000w"/>
+      </div>
+      <div>
+        <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1699963908568-AXN5GNYGZW1X67RVF0CU/image-asset.jpeg?format=1000w"/>
+      </div>
+    </div>
+	</main>
+</Layout>
+
+<style>
+main {
+  margin: auto;
+  padding: 2rem 2rem 2rem 2rem;
+  max-width: calc(100% - 4rem);
+  color: white;
+  font-size: 20px;
+  line-height: 1.6;
+  font-family: Cormorant Upright;
+}
+
+h2 {
+  color: #363636;
+  font-weight: 500;
+  line-height: 53px;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.aboutTitle {
+  color: #363636;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 53px;
+}
+
+.mainText {
+  color: #363636;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.worksLink {
+  text-align: center;
+  color: #56865E;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 53px;
+}
+</style>

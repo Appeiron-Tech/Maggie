@@ -1,0 +1,40 @@
+---
+const coverUrl = 'https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1694585961473-9LFYG7C05ZQAMH26H8QJ/image-asset.jpeg?format=1000w'
+const endImageUrl = 'https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1699963908568-AXN5GNYGZW1X67RVF0CU/image-asset.jpeg?format=1000w'
+const mainText = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+---
+<div class="flex flex-col justify-center px-14">
+  <div class="flex basis-4/6 justify-center">
+    <img src={coverUrl}/>
+  </div>
+  <div class="mainText flex py-14 justify-center">
+    <div class="w-4/6 ">
+      <p><center>{mainText}</center></p>
+    </div>
+  </div>
+  <div class="flex basis-4/6 justify-center">
+    <img src={endImageUrl}/>
+  </div>
+  <div class="moreWorks py-14">
+    <a href="/">See more flowers</a>
+  </div>
+</div>
+
+<style>
+.mainText {
+  color: #363636;
+  font-size: 16px;
+  font-family: Cormorant Upright;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.moreWorks {
+  text-align: center; 
+  color: #56865E; 
+  font-size: 35px; 
+  font-family: Cormorant Upright; 
+  font-weight: 500; 
+  line-height: 53px;
+}
+</style>

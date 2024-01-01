@@ -1,0 +1,32 @@
+---
+interface Props {
+	alignment: string;
+}
+
+const { alignment } = Astro.props;
+---
+
+<div class=`flex ${alignment}`>
+  <a href="https://www.google.com/" target=”_blank”>
+    <div class="socialNetwork">Be</div>
+  </a>
+  <a href="https://www.instagram.com" target=”_blank”>
+    <div class="socialNetwork">Ins</div>
+  </a>
+  <a href="https://www.pinterest.com" target=”_blank”>
+    <div class="socialNetwork">Pin</div>
+  </a>
+</div>
+
+<style>
+.socialNetwork {
+  text-align: center;
+  color: #363636;
+  font-size: 20px;
+  padding-right: 2rem;
+  font-family: Cormorant Upright;
+  font-weight: 600;
+  line-height: 25px;
+  word-wrap: break-word;
+}
+</style>

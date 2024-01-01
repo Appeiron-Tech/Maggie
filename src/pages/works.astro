@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrums from '../components/Breadcrums.astro';
+import WorkBody from '../components/work/WorkBody.astro';
+
+const workTitle = 'TITLE'
+const breadcrums = ['Home', 'Artwork', workTitle]
+---
+
+<Layout title="Margarita Velarde - Design">
+	<main>
+    <Breadcrums breadcrums={breadcrums}/>
+		<h1 class="pt-20 pb-14">{workTitle}</h1>
+    <WorkBody />
+	</main>
+</Layout>
+
+<style>
+main {
+  margin: auto;
+  padding: 2rem 1rem 1rem 1rem;
+  max-width: calc(100% - 2rem);
+  color: white;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #363636;
+  font-family: Cormorant Upright;
+  font-weight: 500;
+  line-height: 53px;
+  font-size: 3rem;
+  text-align: center;
+}
+</style>
