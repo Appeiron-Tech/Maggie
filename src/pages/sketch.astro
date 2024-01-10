@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrums from '../components/Breadcrums.astro';
+import MoreWorks from '../components/work/MoreWorks.astro';
+import AsideSelector from '../components/sketch/AsideSelector.vue';
+import SketchBody from '../components/sketch/SketchBody.vue';
+
+const breadcrums = ['Home', 'Sketch', 'DateX']
+---
+
+<Layout title="Margarita Velarde - Sketch">
+	<main>
+    <Breadcrums breadcrums={breadcrums}/>
+    <div class="flex flex-row my-20">
+      <div class="basis-1/6 mt-20">
+        <AsideSelector client:load/>
+      </div>
+      <div class="basis-5/6 mx-24">
+        <SketchBody client:load/>
+      </div>
+    </div>
+    <MoreWorks style="width: 100%;"/>
+	</main>
+</Layout>
+
+<style>
+main {
+  margin: auto;
+  padding: 2rem 2rem 2rem 2rem;
+  max-width: calc(100% - 4rem);
+  color: white;
+  font-size: 20px;
+  line-height: 1.6;
+  font-family: Cormorant Upright;
+}
+</style>
