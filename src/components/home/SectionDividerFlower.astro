@@ -1,5 +1,12 @@
-<div class="sectionDivider">
-  See more flowers
+---
+interface Props {
+	message: string;
+}
+
+const { message } = Astro.props;
+---
+
+<div class="sectionDivider" set:html={message}>
 </div>
 
 <style>

@@ -5,15 +5,20 @@ import Sections from '../components/home/Sections.astro';
 import Layout from '../layouts/Layout.astro';
 import Artworks from '../components/home/Artworks.astro';
 import SectionDividerFlower from '../components/home/SectionDividerFlower.astro';
+
+const videoUrl = "https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4"
+const greetingsMessage = `Hello, welcome to </br> my garden...`
+const categories = ['All', 'UI/UX', 'WEB', 'BRANDING']
+const moreWorksMessage = 'See more flowers'
 ---
 
 <Layout title="Margarita Velarde">
 	<main>
-		<MainVideo />
-		<Greetings />
-		<Sections />
+		<MainVideo videoUrl={videoUrl} />
+		<Greetings message={greetingsMessage} />
+		<Sections categories={categories}/>
 		<Artworks/>
-		<SectionDividerFlower />
+		<SectionDividerFlower message={moreWorksMessage}/>
 	</main>
 </Layout>
 

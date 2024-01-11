@@ -1,5 +1,12 @@
-<div class="greetingBox">
-  Hello, welcome to </br> my garden...
+---
+interface Props {
+	message: string;
+}
+
+const { message } = Astro.props;
+---
+
+<div class="greetingBox" set:html={message}>
 </div>
 
 <style>
