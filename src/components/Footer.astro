@@ -1,9 +1,25 @@
 ---
-import Contact from "./home/Contact.astro";
+import ContactForm from "./home/ContactForm.astro";
+const contact = {
+  title: 'Contact',
+	subtitle: 'Do you want a special work? Let’s talk.',
+  sendButton: 'Send',
+  contact: {
+    phone: '+34 621 080 558',
+    email: 'maggievelar@gmail.com',
+    sns: ['Be', 'Ins', 'Pins']
+  }
+}
+
 ---
 
 <footer>
-  <Contact />
+  <ContactForm 
+    title={contact.title}
+	  subtitle={contact.subtitle}
+    sendButton={contact.sendButton}
+    contact={contact.contact}
+  />
   <div class="bg-white flex items-center justify-between px-16 py-12">
     <!-- logo -->
     <h1 class="w-3/12">

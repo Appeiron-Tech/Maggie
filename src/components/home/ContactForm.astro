@@ -1,3 +1,16 @@
+---
+import type { IContact } from '../../stores/contact.store';
+
+interface Props {
+  title: string
+	subtitle: string
+  sendButton: string
+  contact: IContact
+}
+
+const { title, subtitle, sendButton, contact } = Astro.props;
+---
+
 <div class="contactContainer">
   <div class="flex flex-row">
     <div class="basis-1/2">
@@ -7,10 +20,10 @@
       <div class="contactLeftContainer">
         <div class="flex-row">
           <div class="contactTitle">
-            Contact
+            {title}
           </div>
           <div class="contactTitle" style="font-size: 20px; font-weight: 400;">
-            Do you want a special work? Let’s talk.
+            {subtitle}
           </div>
         </div>
         <div class="flex flex-row py-8">
@@ -26,18 +39,19 @@
         </div>
         <div class="flex-row pt-2">
           <button class="sentButton">
-            Send
+            <!-- Send -->
+            {sendButton}
           </button>
         </div>
         <div class="flex flex-row" style="padding-top: 3.5rem;">
           <div class="basis-2/3">
             <div class="contactData" style="text-align: left;">
-              +34 621 080 558   <a style="padding-inline: 0.75rem;">|</a>   maggievelar@gmail.com
+              {contact.phone}   <a style="padding-inline: 0.75rem;">|</a>   {contact.email}
             </div>
           </div>
           <div class="basis-1/3">
             <div class="contactData" style="text-align: right;">
-              Be  Ins  Pins
+              {contact.sns.join('   ')}
             </div>
           </div>
         </div>
