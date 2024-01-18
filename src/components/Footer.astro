@@ -1,30 +1,22 @@
 ---
+import { company } from "../stores/company.store";
+import { contacts } from "../stores/contact.store";
 import ContactForm from "./home/ContactForm.astro";
-const contact = {
-  title: 'Contact',
-	subtitle: 'Do you want a special work? Let’s talk.',
-  sendButton: 'Send',
-  contact: {
-    phone: '+34 621 080 558',
-    email: 'maggievelar@gmail.com',
-    sns: ['Be', 'Ins', 'Pins']
-  }
-}
 
 ---
 
 <footer>
   <ContactForm 
-    title={contact.title}
-	  subtitle={contact.subtitle}
-    sendButton={contact.sendButton}
-    contact={contact.contact}
+    title={contacts.title}
+	  subtitle={contacts.subtitle}
+    sendButton={contacts.sendButton}
+    contact={contacts.contact}
   />
   <div class="bg-white flex items-center justify-between px-16 py-12">
     <!-- logo -->
     <h1 class="w-3/12">
       <a href="/home">
-        <div class="logo">Maggie Velarde</div>
+        <div class="logo">{company.name}</div>
       </a>
     </h1>
 
@@ -40,7 +32,7 @@ const contact = {
     </div>
 
     <div class="flex justify-end">
-      <div class="nameAndYear">©2023 Maggie Velarde</div>
+      <div class="nameAndYear">©2023 {company.name}</div>
     </div>
   </div>
 
