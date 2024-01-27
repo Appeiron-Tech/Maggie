@@ -1,21 +1,20 @@
 ---
+import type { ISns } from '../stores/company.store';
+
 interface Props {
-	alignment: string;
+	alignment: string,
+  sns: ISns[]
 }
 
-const { alignment } = Astro.props;
+const { alignment, sns } = Astro.props;
 ---
 
 <div class=`flex ${alignment}`>
-  <a href="https://www.google.com/" target=”_blank”>
-    <div class="socialNetwork">Be</div>
-  </a>
-  <a href="https://www.instagram.com" target=”_blank”>
-    <div class="socialNetwork">Ins</div>
-  </a>
-  <a href="https://www.pinterest.com" target=”_blank”>
-    <div class="socialNetwork">Pin</div>
-  </a>
+  {sns.map((sn) => 
+    <a href={sn.url} target="_blank">
+      <div class="socialNetwork">{sn.code}</div>
+    </a>
+  )}
 </div>
 
 <style>

@@ -1,14 +1,15 @@
 ---
-import type { IContact } from '../../stores/contact.store';
+import type { IContact, ISns } from '../../stores/company.store';
 
 interface Props {
   title: string
 	subtitle: string
   sendLabel: string
   contact: IContact
+  sns: ISns[]
 }
 
-const { title, subtitle, sendLabel, contact } = Astro.props;
+const { title, subtitle, sendLabel, contact, sns } = Astro.props;
 ---
 
 <div class="contactContainer">
@@ -51,7 +52,7 @@ const { title, subtitle, sendLabel, contact } = Astro.props;
           </div>
           <div class="basis-1/3">
             <div class="contactData" style="text-align: right;">
-              {contact.sns?.map((sn) => 
+              {sns?.map((sn) => 
                 <a href={sn.url}>&nbsp; {sn.code} &nbsp;</a>
               )}
             </div>

@@ -31,7 +31,7 @@ const { navButtons } = Astro.props;
   <div style="text-align: center; color: #363636; font-size: 20px; font-family: Poppins; font-weight: 400; word-wrap: break-word">|</div>
 
   <!-- social networks --->
-  <SocialNetworkLinks alignment='justify-end'/>
+  <SocialNetworkLinks alignment='justify-end' sns={company.stores[0].sns}/>
 </header>
 
 <style>
