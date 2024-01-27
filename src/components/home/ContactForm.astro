@@ -4,11 +4,11 @@ import type { IContact } from '../../stores/contact.store';
 interface Props {
   title: string
 	subtitle: string
-  sendButton: string
+  sendLabel: string
   contact: IContact
 }
 
-const { title, subtitle, sendButton, contact } = Astro.props;
+const { title, subtitle, sendLabel, contact } = Astro.props;
 ---
 
 <div class="contactContainer">
@@ -40,7 +40,7 @@ const { title, subtitle, sendButton, contact } = Astro.props;
         <div class="flex-row pt-2">
           <button class="sentButton">
             <!-- Send -->
-            {sendButton}
+            {sendLabel}
           </button>
         </div>
         <div class="flex flex-row" style="padding-top: 3.5rem;">
@@ -51,7 +51,9 @@ const { title, subtitle, sendButton, contact } = Astro.props;
           </div>
           <div class="basis-1/3">
             <div class="contactData" style="text-align: right;">
-              {contact.sns.join('   ')}
+              {contact.sns?.map((sn) => 
+                <a href={sn.url}>&nbsp; {sn.code} &nbsp;</a>
+              )}
             </div>
           </div>
         </div>

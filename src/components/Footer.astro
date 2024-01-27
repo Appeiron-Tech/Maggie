@@ -1,16 +1,16 @@
 ---
 import { company } from "../stores/company.store";
-import { contacts } from "../stores/contact.store";
+import { contactForm } from "../stores/contact.store";
 import ContactForm from "./home/ContactForm.astro";
 
 ---
 
 <footer>
   <ContactForm 
-    title={contacts.title}
-	  subtitle={contacts.subtitle}
-    sendButton={contacts.sendButton}
-    contact={contacts.contact}
+    title={contactForm.title}
+	  subtitle={contactForm.subtitle}
+    sendLabel={contactForm.sendLabel}
+    contact={contactForm.contact}
   />
   <div class="bg-white flex items-center justify-between px-16 py-12">
     <!-- logo -->
