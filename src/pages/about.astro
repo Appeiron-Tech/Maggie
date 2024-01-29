@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Breadcrums from '../components/Breadcrums.astro';
 import SocialNetworkLinks from '../components/SocialNetworkLinks.astro';
 import { company } from '../stores/company.store';
-import { companyWeb } from '../stores/companyWeb.store';
+import { webCompany } from '../stores/companyWeb.store';
 
 const breadcrums = ['Home', 'about']
 ---
@@ -21,9 +21,9 @@ const breadcrums = ['Home', 'about']
       </div>
       <div class="basis-1/2 mx-14">
         <div class="flex flex-col gap-4">
-		      <h2 class="aboutTitle pb-10">{companyWeb.about.title}</h2>
+		      <h2 class="aboutTitle pb-10">{webCompany.about.title}</h2>
           <div class="mainText flex justify-center">
-            <center>{companyWeb.about.mainText} {companyWeb.about.mainText}</center>
+            <center>{webCompany.about.mainText} {webCompany.about.mainText}</center>
           </div>
         </div>
       </div>

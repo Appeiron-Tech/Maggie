@@ -1,4 +1,4 @@
-export interface IPost {
+export interface IWebPost {
   title: string
   image: {
     source: string
@@ -8,7 +8,7 @@ export interface IPost {
   textBlocks: string[]
 }
 
-export const Posts: IPost[] = [
+export const Posts: IWebPost[] = [
   {
     title: 'Post 1',
     image: {
@@ -127,23 +127,3 @@ export const Posts: IPost[] = [
     ]
   },
 ]
-
-
-// <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1699963908568-AXN5GNYGZW1X67RVF0CU/image-asset.jpeg?format=1000w" />
-// <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1694585961473-9LFYG7C05ZQAMH26H8QJ/image-asset.jpeg?format=1000w"/>
-// <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1685970999082-ME5LDPJ8ZNCE2GEE3D6R/image-asset.jpeg?format=1000w"/>
-// </div>
-// </div>
-// <div class="basis-1/3">
-// <div class="flex flex-col gap-4">
-// <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1672917747278-59NA4MTUUI1KXJJ9TAOI/image-asset.jpeg?format=1000w"/>
-// <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1694585961473-9LFYG7C05ZQAMH26H8QJ/image-asset.jpeg?format=1000w"/>
-// <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1688812103707-64F904ADD2F0JLJ4TO3G/image-asset.jpeg?format=1000w"/>
-// </div>
-// </div>
-// <div class="basis-1/3">
-// <div class="flex flex-col gap-4">
-// <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1688812103707-64F904ADD2F0JLJ4TO3G/image-asset.jpeg?format=1000w"/>
-// <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1672917747278-59NA4MTUUI1KXJJ9TAOI/image-asset.jpeg?format=1000w"/>
-// <img src="https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1699963908568-AXN5GNYGZW1X67RVF0CU/image-asset.jpeg?format=1000w"/>
-// </div>

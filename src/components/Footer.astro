@@ -1,15 +1,15 @@
 ---
 import { company } from "../stores/company.store";
-import { companyWeb } from "../stores/companyWeb.store";
+import { webCompany } from "../stores/companyWeb.store";
 import ContactForm from "./home/ContactForm.astro";
 
 ---
 
 <footer>
   <ContactForm 
-    title={companyWeb.title}
-	  subtitle={companyWeb.subtitle}
-    sendLabel={companyWeb.sendLabel}
+    title={webCompany.title}
+	  subtitle={webCompany.subtitle}
+    sendLabel={webCompany.sendLabel}
     contact={company.stores[0].contact}
     sns={company.stores[0].sns}
   />
@@ -69,4 +69,4 @@ import ContactForm from "./home/ContactForm.astro";
   word-wrap: break-word
 }
 
-</style>../stores/companyWeb.store
+</style>../stores/webCompany.store

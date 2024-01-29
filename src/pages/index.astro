@@ -6,20 +6,18 @@ import Layout from '../layouts/Layout.astro';
 import Artworks from '../components/home/Artworks.astro';
 import SectionDividerFlower from '../components/home/SectionDividerFlower.astro';
 import { Posts } from '../stores/posts.store';
+import { webCompany } from '../stores/companyWeb.store';
 
-const videoUrl = "https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4"
-const greetingsMessage = `Hello, welcome to </br> my garden...`
 const categories = ['All', 'UI/UX', 'WEB', 'BRANDING']
-const moreWorksMessage = 'See more flowers'
 ---
 
 <Layout title="Margarita Velarde">
 	<main>
-		<MainVideo videoUrl={videoUrl} />
-		<Greetings message={greetingsMessage} />
+		<MainVideo videoUrl={webCompany.landing.videoUrl} />
+		<Greetings message={webCompany.landing.greetingsMessage} />
 		<Sections categories={categories}/>
 		<Artworks posts={Posts}/>
-		<SectionDividerFlower message={moreWorksMessage}/>
+		<SectionDividerFlower message={webCompany.landing.moreWorksMessage}/>
 	</main>
 </Layout>
 
