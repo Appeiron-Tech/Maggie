@@ -21,8 +21,8 @@ for(let column = 0; column < totalColumns; column++){
   artworksHtml = artworksHtml + `<div class="basis-1/3"><div class="flex flex-col gap-4">`
   for(let postIndex = column*postByColumns; postIndex < (column+1)*postByColumns; postIndex++){
     const post = posts[postIndex]
-    artworksHtml = artworksHtml + `<a href="${post.image.link}">
-      <img src="${post.image.source}" alt="${post.image.alt}"/>
+    artworksHtml = artworksHtml + `<a href="${post.cover?.url}">
+      <img src="${post.cover?.source}" alt="${post.cover?.alt}"/>
     </a>`
   }
   artworksHtml = artworksHtml + `</div></div>`

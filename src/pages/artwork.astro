@@ -2,16 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrums from '../components/Breadcrums.astro';
 import WorkBody from '../components/work/WorkBody.astro';
+import { Posts } from '../stores/posts.store';
 
-const workTitle = 'TITLE'
-const breadcrums = ['Home', 'Artwork', workTitle]
+const artwork = Posts.filter((post) => post.type === 'artwork')[0]
+const breadcrums = ['Home', 'Artwork', artwork.title]
 ---
 
 <Layout title="Margarita Velarde - Design">
 	<main>
     <Breadcrums breadcrums={breadcrums}/>
-		<h1 class="pt-20 pb-14">{workTitle}</h1>
-    <WorkBody />
+		<h1 class="pt-20 pb-14">{artwork.title}</h1>
+    <WorkBody 
+      coverUrl={artwork.cover?.url}
+      endImageUrl={artwork.endImage?.url}
+      mainText={artwork.textBlocks[0]}
+    />
 	</main>
 </Layout>
 
