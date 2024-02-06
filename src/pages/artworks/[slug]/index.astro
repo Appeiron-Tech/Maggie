@@ -1,0 +1,55 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrums from '../../../components/Breadcrums.astro';
+import WorkBody from '../../../components/work/WorkBody.astro';
+import { Posts } from '../../../stores/posts.store';
+import { slugifyStr } from "../../../utils/slugify";
+
+export async function getStaticPaths() {
+  const allArtworks = Posts.filter((post) => post.type === 'artwork')
+  return allArtworks.map(artwork => {
+    return {
+      params: {
+        slug: slugifyStr(artwork.title)
+      },
+      props: artwork,
+    }
+  })
+}
+
+const { title, cover, endImage, textBlocks } = Astro.props
+const breadcrums = ['Home', 'Artwork', title]
+
+---
+
+<Layout title="Margarita Velarde - Design">
+	<main>
+    <Breadcrums breadcrums={breadcrums}/>
+		<h1 class="pt-20 pb-14">{title}</h1>
+    <WorkBody 
+      coverUrl={cover?.source}
+      endImageUrl={endImage?.source}
+      mainText={textBlocks[0]}
+    />
+	</main>
+</Layout>
+
+<style>
+main {
+  margin: auto;
+  padding: 2rem 1rem 1rem 1rem;
+  max-width: calc(100% - 2rem);
+  color: white;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #363636;
+  font-family: Cormorant Upright;
+  font-weight: 500;
+  line-height: 53px;
+  font-size: 3rem;
+  text-align: center;
+}
+</style>
