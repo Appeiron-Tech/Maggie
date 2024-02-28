@@ -1,3 +1,8 @@
+export enum WebPostType {
+  POST = 'post',
+  ARTWORK = 'artwork',
+  SKETCH = 'sketch'
+}
 export interface IWebPost {
   title: string
   cover?: {
@@ -9,9 +14,12 @@ export interface IWebPost {
     source: string
     url: string
     alt: string
-  },
-  textBlocks: string[],
+  }
+  textBlocks: string[]
   type?: string
+  relatedPosts?: string[]
+  order?: number
+  children?: Omit<IWebPost, 'children'>[]
 }
 
 export const Posts: IWebPost[] = [
@@ -164,6 +172,66 @@ export const Posts: IWebPost[] = [
     type: 'artwork',
     textBlocks: [
       'AW 2 Lorem Ipsum 1 es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.',
+    ]
+  },
+  {
+    title: 'Sketch 1',
+    textBlocks: [
+      'Sketch Lorem Ipsum 1 es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+    ],
+    type: WebPostType.SKETCH,
+    children: [
+      {
+        title: "Date 1",
+        cover: {
+          source: 'https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1699963908568-AXN5GNYGZW1X67RVF0CU/image-asset.jpeg?format=1000w',
+          url: '',
+          alt: '' 
+        },
+        endImage: {
+          source: 'https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1694585961473-9LFYG7C05ZQAMH26H8QJ/image-asset.jpeg?format=1000w',
+          url: '',
+          alt: ''
+        },
+        textBlocks: [
+          'Date 1 Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+        ],
+        order: 0,
+      },
+      {
+        title: "Date 2",
+        cover: {
+          source: 'https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1699963908568-AXN5GNYGZW1X67RVF0CU/image-asset.jpeg?format=1000w',
+          url: '',
+          alt: '' 
+        },
+        endImage: {
+          source: 'https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1694585961473-9LFYG7C05ZQAMH26H8QJ/image-asset.jpeg?format=1000w',
+          url: '',
+          alt: ''
+        },
+        textBlocks: [
+          'Date 2 Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+        ],
+        order: 1,
+      },
+      {
+        title: "Date 3",
+        cover: {
+          source: 'https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1699963908568-AXN5GNYGZW1X67RVF0CU/image-asset.jpeg?format=1000w',
+          url: '',
+          alt: '' 
+        },
+        endImage: {
+          source: 'https://images.squarespace-cdn.com/content/v1/554b5e7ce4b0149371f10a93/1694585961473-9LFYG7C05ZQAMH26H8QJ/image-asset.jpeg?format=1000w',
+          url: '',
+          alt: ''
+        },
+        textBlocks: [
+          'Date 3 Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+        ],
+        order: 2,
+      }
     ]
   },
 ]

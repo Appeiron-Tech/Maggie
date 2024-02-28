@@ -1,0 +1,45 @@
+---
+import SketchBody from '../../../components/sketch/SketchBody.vue';
+import MoreWorks from '../../../components/work/MoreWorks.astro';
+import Breadcrums from '../../../components/Breadcrums.astro';
+import { slugifyStr } from '../../../utils/slugify';
+import { Posts, WebPostType } from '../../../stores/posts.store';
+import Layout from '../../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const sketches = Posts.filter((post) => post.type === WebPostType.SKETCH)
+  return sketches.map(sketch => {
+    return {
+      params: {
+        slug: slugifyStr(sketch.title)
+      },
+      props: sketch,
+    }
+  })
+}
+
+const { title, children } = Astro.props
+const breadcrums = ['Home', 'Sketches', title]
+---
+
+<Layout title="Margarita Velarde - Sketch">
+	<main>
+    <Breadcrums breadcrums={breadcrums}/>
+    <div class="flex flex-row my-20">
+      <SketchBody children={children} client:load/>
+    </div>
+    <MoreWorks style="width: 100%;"/>
+	</main>
+</Layout>
+
+<style>
+main {
+  margin: auto;
+  padding: 2rem 2rem 2rem 2rem;
+  max-width: calc(100% - 4rem);
+  color: white;
+  font-size: 20px;
+  line-height: 1.6;
+  font-family: Cormorant Upright;
+}
+</style>
