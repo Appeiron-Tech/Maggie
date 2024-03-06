@@ -1,14 +1,13 @@
 ---
 import { company } from "../stores/company.store";
-import { webCompany } from "../stores/companyWeb.store";
 import ContactForm from "./home/ContactForm.astro";
 ---
 
 <footer>
   <ContactForm 
-    title={webCompany.contact.title || 'Contacto'}
-	  subtitle={webCompany.contact.subtitle || ''}
-    sendLabel={webCompany.contact.sendLabel || 'Send'}
+    title={company.web.contact.title || 'Contacto'}
+	  subtitle={company.web.contact.subtitle || ''}
+    sendLabel={company.web.contact.sendLabel || 'Send'}
     contact={company.stores[0].contact}
     sns={company.stores[0].sns}
   />

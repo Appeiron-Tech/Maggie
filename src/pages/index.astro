@@ -6,18 +6,18 @@ import Layout from '../layouts/Layout.astro';
 import Artworks from '../components/home/Artworks.astro';
 import SectionDividerFlower from '../components/home/SectionDividerFlower.astro';
 import { Posts } from '../stores/posts.store';
-import { webCompany } from '../stores/companyWeb.store';
+import { company } from '../stores/company.store';
 
 const categories = ['All', 'UI/UX', 'WEB', 'BRANDING']
 ---
 
 <Layout title="Margarita Velarde">
 	<main>
-		<MainVideo videoUrl={webCompany.landing.videoUrl} />
-		<Greetings message={webCompany.landing.greetingsMessage} />
+		<MainVideo videoUrl={company.web.landing.videoUrl} />
+		<Greetings message={company.web.landing.greetingsMessage} />
 		<Sections categories={categories}/>
 		<Artworks posts={Posts}/>
-		<SectionDividerFlower message={webCompany.landing.moreWorksMessage}/>
+		<SectionDividerFlower message={company.web.landing.moreWorksMessage}/>
 	</main>
 </Layout>
 
