@@ -4,6 +4,7 @@ import Breadcrums from '../../../components/Breadcrums.astro';
 import WorkBody from '../../../components/work/WorkBody.astro';
 import { Posts, WebPostType } from '../../../stores/posts.store';
 import { slugifyStr } from "../../../utils/slugify";
+import { CompanyStore } from '../../../stores/company.store';
 
 export async function getStaticPaths() {
   const allArtworks = Posts.filter((post) => post.type === WebPostType.ARTWORK)
@@ -17,11 +18,14 @@ export async function getStaticPaths() {
   })
 }
 
+const companyStore = new CompanyStore()
+const company = await companyStore.getCompany()
+
 const { title, cover, endImage, textBlocks } = Astro.props
 const breadcrums = ['Home', 'Artwork', title]
 ---
 
-<Layout title="Margarita Velarde - Design">
+<Layout company={company}  title="Margarita Velarde - Design">
 	<main>
     <Breadcrums breadcrums={breadcrums}/>
 		<h1 class="pt-20 pb-14">{title}</h1>

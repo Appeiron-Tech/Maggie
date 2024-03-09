@@ -1,12 +1,13 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import type { ICompany } from '../stores/company.store';
+import { type ICompany } from '../stores/company.store';
 interface Props {
+	title?: string
 	company: ICompany
 }
 
-const { company } = Astro.props;
+const { title, company } = Astro.props;
 const navButtons: any[] = [
 	{
 		title: 'Artwork',
@@ -38,7 +39,7 @@ const navButtons: any[] = [
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{company.name}</title>
+		<title>{company.name + (title ? ' ' + title : '')}</title>
 	</head>
 	<body>
 		<Header navButtons={navButtons} company={company}/>

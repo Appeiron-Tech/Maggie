@@ -1,0 +1,13 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CompanyStore } from '../../stores/company.store';
+
+const companyStore = new CompanyStore()
+const company = await companyStore.getCompany()
+---
+
+<Layout company={company} title='- Sketches'>
+  <main>
+    <h2>Sketches pages</h2>
+  </main>
+</Layout>

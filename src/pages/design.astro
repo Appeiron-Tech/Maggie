@@ -3,18 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import HorizontalLoop from '../components/design/HorizontalLoop.astro';
 import Greetings from '../components/design/Greetings.astro';
 import Sections from '../components/design/Sections.astro';
+import { CompanyStore } from '../stores/company.store';
+
+const companyStore = new CompanyStore()
+const company = await companyStore.getCompany()
 ---
 
-<Layout title="Margarita Velarde - Design">
+<Layout company={company} title='- Design'>
 	<main>
     <HorizontalLoop />
 		<Greetings />
     <Sections />
-			<!-- <Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/> -->
 	</main>
 </Layout>
 

@@ -5,6 +5,7 @@ import Breadcrums from '../../../components/Breadcrums.astro';
 import { slugifyStr } from '../../../utils/slugify';
 import { Posts, WebPostType } from '../../../stores/posts.store';
 import Layout from '../../../layouts/Layout.astro';
+import { CompanyStore } from '../../../stores/company.store';
 
 export async function getStaticPaths() {
   const sketches = Posts.filter((post) => post.type === WebPostType.SKETCH)
@@ -18,11 +19,14 @@ export async function getStaticPaths() {
   })
 }
 
+const companyStore = new CompanyStore()
+const company = await companyStore.getCompany()
+
 const { title, children } = Astro.props
 const breadcrums = ['Home', 'Sketches', title]
 ---
 
-<Layout title="Margarita Velarde - Sketch">
+<Layout company={company} title="- Sketch">
 	<main>
     <Breadcrums breadcrums={breadcrums}/>
     <div class="flex flex-row my-20">

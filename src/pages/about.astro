@@ -2,12 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrums from '../components/Breadcrums.astro';
 import SocialNetworkLinks from '../components/SocialNetworkLinks.astro';
+import { CompanyStore } from '../stores/company.store';
 
+const companyStore = new CompanyStore()
+const company = await companyStore.getCompany()
 
 const breadcrums = ['Home', 'about']
 ---
 
-<Layout company={company}>
+<Layout company={company} title='- About'>
 	<main>
     <Breadcrums breadcrums={breadcrums}/>
     <div class="flex flex-row gap-10 my-20">
