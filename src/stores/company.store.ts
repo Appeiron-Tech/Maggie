@@ -58,7 +58,9 @@ export interface ICompany {
   name: string
   country: string
   type: string
+  contact: IContact
   currency: string
+  sns: ISns[]
   stores: IStore[]
   web: IWebCompany
   updatedAt: Date
@@ -70,6 +72,11 @@ export const company: ICompany = {
   country: "Spain",
   type: "freelance",
   currency: "EUR",
+  contact: {
+    phone: '+34 621 080 558',
+    email: 'maggievelar@gmail.com',
+    website: 'wwww.maggievelar.com'
+  },
   web: {
     companyId: 'companyId',
     contact: {
@@ -87,6 +94,23 @@ export const company: ICompany = {
       moreWorksMessage: 'See more flowers',
     }
   },
+  sns: [
+    {
+      code: 'INS',
+      url: 'www.instagram.com',
+      active: true
+    },
+    {
+      code: 'PINS',
+      url: 'www.pinterest.com',
+      active: true
+    },
+    {
+      code: 'BEH',
+      url: 'www.behance.com',
+      active: true
+    },
+],
   stores: [
     {
       name: '',

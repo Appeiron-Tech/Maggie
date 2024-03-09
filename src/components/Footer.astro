@@ -1,6 +1,11 @@
 ---
-import { company } from "../stores/company.store";
+import type { ICompany } from "../stores/company.store";
 import ContactForm from "./home/ContactForm.astro";
+interface Props {
+  company: ICompany
+}
+
+const { company } = Astro.props;
 ---
 
 <footer>
@@ -8,8 +13,8 @@ import ContactForm from "./home/ContactForm.astro";
     title={company.web.contact.title || 'Contacto'}
 	  subtitle={company.web.contact.subtitle || ''}
     sendLabel={company.web.contact.sendLabel || 'Send'}
-    contact={company.stores[0].contact}
-    sns={company.stores[0].sns}
+    contact={company.contact}
+    sns={company.sns}
   />
   <div class="bg-white flex items-center justify-between px-16 py-12">
     <!-- logo -->

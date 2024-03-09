@@ -1,11 +1,12 @@
 ---
-import { company } from '../stores/company.store';
+import type { ICompany } from '../stores/company.store';
 import SocialNetworkLinks from './SocialNetworkLinks.astro';
 interface Props {
-  navButtons: any[];
+  navButtons: any[]
+  company: ICompany
 }
 
-const { navButtons } = Astro.props;
+const { navButtons, company } = Astro.props;
 
 ---
 <!-- component -->
@@ -31,7 +32,7 @@ const { navButtons } = Astro.props;
   <div style="text-align: center; color: #363636; font-size: 20px; font-family: Poppins; font-weight: 400; word-wrap: break-word">|</div>
 
   <!-- social networks --->
-  <SocialNetworkLinks alignment='justify-end' sns={company.stores[0].sns}/>
+  <SocialNetworkLinks alignment='justify-end' sns={company.sns}/>
 </header>
 
 <style>

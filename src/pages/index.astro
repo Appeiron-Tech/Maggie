@@ -9,12 +9,11 @@ import { Posts } from '../stores/posts.store';
 import { CompanyStore } from '../stores/company.store';
 
 const categories = ['All', 'UI/UX', 'WEB', 'BRANDING']
-
 const companyStore = new CompanyStore()
 const company = await companyStore.getCompany()
 ---
 
-<Layout title="Margarita Velarde">
+<Layout company={company}>
 	<main>
 		<MainVideo videoUrl={company.web.landing.videoUrl} />
 		<Greetings message={company.web.landing.greetingsMessage} />
