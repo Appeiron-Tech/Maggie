@@ -1,17 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios'
 import type { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
-import { API_BASE_URL, API_PREFIX_BASE } from '../../constants'
+import { API_BASE_URL, API_PREFIX_BASE, TENANCY_NAME } from '../../constants'
 
 
 // https://medium.com/@zitko/structuring-a-vue-project-authentication-87032e5bfe16
 abstract class ApiService {
-  _baseUrl = 'web'
-  _fullApiBase: string = API_PREFIX_BASE
+  _baseUrl = ''
+  // _fullApiBase: string = API_PREFIX_BASE
+  _fullApiBase: string = import.meta.env.APP_API_PREFIX_BASE
 
   constructor(config: { baseURL: string }) {
     this._baseUrl = config.baseURL
     this._fullApiBase = API_BASE_URL + API_PREFIX_BASE + this._baseUrl
+    console.log('fullApi: ' + this._fullApiBase)
     this.setHeader()
   }
 
@@ -27,6 +29,8 @@ abstract class ApiService {
   }
 
   async get(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<any>> {
+    console.log('calling get')
+    console.log(this._fullApiBase + url)
     return axios
       .get(this._fullApiBase + url, config)
       .then((response: AxiosResponse) => {

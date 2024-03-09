@@ -6,9 +6,12 @@ import Layout from '../layouts/Layout.astro';
 import Artworks from '../components/home/Artworks.astro';
 import SectionDividerFlower from '../components/home/SectionDividerFlower.astro';
 import { Posts } from '../stores/posts.store';
-import { company } from '../stores/company.store';
+import { CompanyStore } from '../stores/company.store';
 
 const categories = ['All', 'UI/UX', 'WEB', 'BRANDING']
+
+const companyStore = new CompanyStore()
+const company = await companyStore.getCompany()
 ---
 
 <Layout title="Margarita Velarde">
