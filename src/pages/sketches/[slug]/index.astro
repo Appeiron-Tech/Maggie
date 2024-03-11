@@ -3,12 +3,13 @@ import SketchBody from '../../../components/sketch/SketchBody.vue';
 import MoreWorks from '../../../components/work/MoreWorks.astro';
 import Breadcrums from '../../../components/Breadcrums.astro';
 import { slugifyStr } from '../../../utils/slugify';
-import { Posts, WebPostType } from '../../../stores/posts.store';
+import { WebPostType, getAllPosts } from '../../../stores/posts.store';
 import Layout from '../../../layouts/Layout.astro';
-import { CompanyStore } from '../../../stores/company.store';
+import { getCompany } from '../../../stores/company.store';
 
 export async function getStaticPaths() {
-  const sketches = Posts.filter((post) => post.type === WebPostType.SKETCH)
+  const postss = await getAllPosts()
+  const sketches = postss.filter((post) => post.type === WebPostType.SKETCH)
   return sketches.map(sketch => {
     return {
       params: {
@@ -19,9 +20,7 @@ export async function getStaticPaths() {
   })
 }
 
-const companyStore = new CompanyStore()
-const company = await companyStore.getCompany()
-
+const company = await getCompany()
 const { title, children } = Astro.props
 const breadcrums = ['Home', 'Sketches', title]
 ---

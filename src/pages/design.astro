@@ -3,10 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import HorizontalLoop from '../components/design/HorizontalLoop.astro';
 import Greetings from '../components/design/Greetings.astro';
 import Sections from '../components/design/Sections.astro';
-import { CompanyStore } from '../stores/company.store';
+import { getCompany } from '../stores/company.store';
 
-const companyStore = new CompanyStore()
-const company = await companyStore.getCompany()
+const company = await getCompany()
 ---
 
 <Layout company={company} title='- Design'>

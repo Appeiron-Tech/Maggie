@@ -2,7 +2,7 @@ import { TENANCY_NAME } from '../constants.ts'
 import type { ICompany } from '../stores/company.store.ts'
 import ApiService from './shared/api.service.ts'
 
-export default class CentredService extends ApiService {
+export default class CompanyService extends ApiService {
   constructor() {
     super({ baseURL: '/company' })
   }

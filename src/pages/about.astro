@@ -2,11 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrums from '../components/Breadcrums.astro';
 import SocialNetworkLinks from '../components/SocialNetworkLinks.astro';
-import { CompanyStore } from '../stores/company.store';
+import { getCompany } from '../stores/company.store';
 
-const companyStore = new CompanyStore()
-const company = await companyStore.getCompany()
-
+const company = await getCompany()
 const breadcrums = ['Home', 'about']
 ---
 

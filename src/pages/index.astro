@@ -5,12 +5,12 @@ import Sections from '../components/home/Sections.astro';
 import Layout from '../layouts/Layout.astro';
 import Artworks from '../components/home/Artworks.astro';
 import SectionDividerFlower from '../components/home/SectionDividerFlower.astro';
-import { Posts } from '../stores/posts.store';
-import { CompanyStore } from '../stores/company.store';
+import { getAllPosts } from '../stores/posts.store';
+import { getCompany } from '../stores/company.store';
 
 const categories = ['All', 'UI/UX', 'WEB', 'BRANDING']
-const companyStore = new CompanyStore()
-const company = await companyStore.getCompany()
+const company = await getCompany()
+const postss = await getAllPosts()
 ---
 
 <Layout company={company}>
@@ -18,7 +18,7 @@ const company = await companyStore.getCompany()
 		<MainVideo videoUrl={company.web.landing.videoUrl} />
 		<Greetings message={company.web.landing.greetingsMessage} />
 		<Sections categories={categories}/>
-		<Artworks posts={Posts}/>
+		<Artworks posts={postss}/>
 		<SectionDividerFlower message={company.web.landing.moreWorksMessage}/>
 	</main>
 </Layout>

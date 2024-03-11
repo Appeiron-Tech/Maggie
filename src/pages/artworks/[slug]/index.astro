@@ -2,12 +2,13 @@
 import Layout from '../../../layouts/Layout.astro';
 import Breadcrums from '../../../components/Breadcrums.astro';
 import WorkBody from '../../../components/work/WorkBody.astro';
-import { Posts, WebPostType } from '../../../stores/posts.store';
+import { WebPostType, getAllPosts } from '../../../stores/posts.store';
 import { slugifyStr } from "../../../utils/slugify";
-import { CompanyStore } from '../../../stores/company.store';
+import { getCompany } from '../../../stores/company.store';
 
 export async function getStaticPaths() {
-  const allArtworks = Posts.filter((post) => post.type === WebPostType.ARTWORK)
+  const allPosts = await getAllPosts()
+  const allArtworks = allPosts.filter((post) => post.type === WebPostType.ARTWORK)
   return allArtworks.map(artwork => {
     return {
       params: {
@@ -18,9 +19,7 @@ export async function getStaticPaths() {
   })
 }
 
-const companyStore = new CompanyStore()
-const company = await companyStore.getCompany()
-
+const company = await getCompany()
 const { title, cover, endImage, textBlocks } = Astro.props
 const breadcrums = ['Home', 'Artwork', title]
 ---

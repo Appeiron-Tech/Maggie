@@ -1,6 +1,5 @@
 import { ref } from 'vue';
 import CompanyService from '../services/company.service'
-import type CentredService from '../services/company.service';
 
 export interface IContact {
   phone: string
@@ -67,17 +66,16 @@ export interface ICompany {
   createdAt: Date
 }
 
-export class CompanyStore {
-  companyService: CentredService
-  company = ref()
-  constructor () {
-    this.companyService = new CompanyService()
+export const company = ref()
+const companyService = new CompanyService()
+async function loadCompany(): Promise<ICompany> {
+  company.value = await companyService.getCompany()
+  return company.value
+}
+
+export async function getCompany(): Promise<ICompany> {
+  if(!company.value){
+    await loadCompany()
   }
-  // Actions
-  async getCompany(): Promise<ICompany> {
-    if (!this.company.value) {
-      this.company.value = await this.companyService.getCompany()
-    }
-    return this.company.value as ICompany
-  }
+  return company.value
 }

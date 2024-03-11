@@ -29,8 +29,6 @@ abstract class ApiService {
   }
 
   async get(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<any>> {
-    console.log('calling get')
-    console.log(this._fullApiBase + url)
     return axios
       .get(this._fullApiBase + url, config)
       .then((response: AxiosResponse) => {
