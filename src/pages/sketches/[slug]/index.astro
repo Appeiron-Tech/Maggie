@@ -2,10 +2,10 @@
 import SketchBody from '../../../components/sketch/SketchBody.vue';
 import MoreWorks from '../../../components/work/MoreWorks.astro';
 import Breadcrums from '../../../components/Breadcrums.astro';
-import { slugifyStr } from '../../../utils/slugify';
 import { WebPostType, getAllPosts } from '../../../stores/posts.store';
 import Layout from '../../../layouts/Layout.astro';
 import { getCompany } from '../../../stores/company.store';
+import { slugifyStr } from '../../../utils/parsers';
 
 export async function getStaticPaths() {
   const postss = await getAllPosts()

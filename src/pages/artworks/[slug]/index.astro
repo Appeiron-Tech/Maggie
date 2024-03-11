@@ -3,8 +3,8 @@ import Layout from '../../../layouts/Layout.astro';
 import Breadcrums from '../../../components/Breadcrums.astro';
 import WorkBody from '../../../components/work/WorkBody.astro';
 import { WebPostType, getAllPosts } from '../../../stores/posts.store';
-import { slugifyStr } from "../../../utils/slugify";
 import { getCompany } from '../../../stores/company.store';
+import { slugifyStr } from '../../../utils/parsers';
 
 export async function getStaticPaths() {
   const allPosts = await getAllPosts()
