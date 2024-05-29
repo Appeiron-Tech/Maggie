@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios'
 import type { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
-import { API_BASE_URL, API_PREFIX_BASE, TENANCY_NAME } from '../../constants'
+import { API_BASE_URL, API_PREFIX_BASE } from '../../constants'
 
 
 // https://medium.com/@zitko/structuring-a-vue-project-authentication-87032e5bfe16
