@@ -1,3 +1,4 @@
+#Astro project https://github.com/Appeiron-Tech/Maggie.git
 FROM node:20 AS runtime
 WORKDIR /user/src
 
